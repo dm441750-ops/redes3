@@ -111,3 +111,32 @@ button.action-btn {
     border-radius: 8px;
     object-fit: cover;
 }
+
+
+//quitalo si no funciona
+
+
+#logTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#logTable th, #logTable td {
+    padding: 12px;
+    text-align: left;
+}
+
+#logTable thead {
+    background: #1d3557;
+    color: white;
+}
+
+.row-blue   { background: #d7e3fc; }
+.row-green  { background: #d4f8e8; }
+.row-orange { background: #ffe0cc; }
+.row-pink   { background: #ffd6e7; }
+.row-purple { background: #e5d1f2; }
