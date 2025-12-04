@@ -10,6 +10,24 @@ document.getElementById("loginBtn").addEventListener("click", () => {
     } else {
         error.textContent = "Usuario o contraseña incorrectos";
     }
+    if (user === "Adolfo Melendez" && pass === "1234") {
+        document.getElementById("login-section").classList.add("hidden");
+        document.getElementById("system").classList.remove("hidden");
+    } else {
+        error.textContent = "Usuario o contraseña incorrectos";
+    }
+    if (user === "Diego Garcia" && pass === "1234") {
+        document.getElementById("login-section").classList.add("hidden");
+        document.getElementById("system").classList.remove("hidden");
+    } else {
+        error.textContent = "Usuario o contraseña incorrectos";
+    }
+    if (user === "Diego Ramirez" && pass === "1234") {
+        document.getElementById("login-section").classList.add("hidden");
+        document.getElementById("system").classList.remove("hidden");
+    } else {
+        error.textContent = "Usuario o contraseña incorrectos";
+    }
 });
 
 // CAMBIO DE PESTAÑAS
@@ -72,3 +90,8 @@ function updateChart() {
     chart.data.datasets[0].data = Object.values(counters);
     chart.update();
 }
+
+
+//quitalo si lo quieres
+
+
