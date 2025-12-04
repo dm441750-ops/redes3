@@ -2,31 +2,21 @@
 document.getElementById("loginBtn").addEventListener("click", () => {
     let user = document.getElementById("user").value;
     let pass = document.getElementById("pass").value;
-    let user = document.getElementById("user1").value;
-    let pass = document.getElementById("pass1").value;
-    let user = document.getElementById("user2").value;
-    let pass = document.getElementById("pass2").value;
     let error = document.getElementById("loginError");
 
     if (user === "admin" && pass === "1234") {
         document.getElementById("login-section").classList.add("hidden");
         document.getElementById("system").classList.remove("hidden");
-    } else {
-        error.textContent = "Usuario o contraseña incorrectos";
-    }
+    } 
     if (user === "Adolfo Melendez" && pass === "1234") {
         document.getElementById("login-section").classList.add("hidden");
         document.getElementById("system").classList.remove("hidden");
-    } else {
-        error.textContent = "Usuario o contraseña incorrectos";
-    }
-    if (user1 === "Diego Garcia" && pass1 === "1234") {
+    } 
+    if (user === "Diego Garcia" && pass === "1234") {
         document.getElementById("login-section").classList.add("hidden");
         document.getElementById("system").classList.remove("hidden");
-    } else {
-        error.textContent = "Usuario o contraseña incorrectos";
     }
-    if (user2 === "Diego Ramirez" && pass2 === "1234") {
+    if (user === "Diego Ramirez" && pass === "1234") {
         document.getElementById("login-section").classList.add("hidden");
         document.getElementById("system").classList.remove("hidden");
     } else {
