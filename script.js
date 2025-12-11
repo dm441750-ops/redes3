@@ -9,6 +9,9 @@ document.getElementById("loginBtn").addEventListener("click", () => {
         case "Adolfo Melendez":
         case "Diego Garcia":
         case "Diego Ramirez":
+        case "Alexis Buen dia":
+        case "Itzel De la Cruz":
+        case "Daniela Cruz":
             if (pass === "1234") {
                 document.getElementById("login-section").classList.add("hidden");
                 document.getElementById("system").classList.remove("hidden");
