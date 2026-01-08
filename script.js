@@ -42,11 +42,15 @@ function updateChart() { chart.data.datasets[0].data = Object.values(counters); 
  ***********************/
 let usuarioActual = "";
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAnB_sfpz4JbO-BFrblqpAVMpY4BSAnFA0",
-  authDomain: "web-app-df58b.firebaseapp.com",
-  projectId: "web-app-df58b"
-};
+ const firebaseConfig = {
+    apiKey: "AIzaSyBJuuAESQthZ4jZCVbHGK5q60OGcctnfO8",
+    authDomain: "redes-8685d.firebaseapp.com",
+    projectId: "redes-8685d",
+    storageBucket: "redes-8685d.firebasestorage.app",
+    messagingSenderId: "163949363062",
+    appId: "1:163949363062:web:9a6ef769678626f7d18457",
+    measurementId: "G-7Q9SQSMFVF"
+  };
 
 // Inicializar Firebase (FORMA CORRECTA)
 firebase.initializeApp(firebaseConfig);
