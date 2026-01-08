@@ -1,26 +1,3 @@
-
-/***********************
- * IMPORTS FIREBASE
- ***********************/
-/*import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-import { getFirestore, collection, addDoc, serverTimestamp, onSnapshot, query, orderBy } 
-from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
-
-/***********************
- * CONFIG FIREBASE
- ***********************/
-/*const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_PROYECTO.firebaseapp.com",
-  projectId: "TU_PROYECTO",
-};
-
-/***********************
- * INIT
- ***********************/
-/*const app = initializeApp(firebaseConfig);
-const db = getFirestore(app); */
-
    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
 
