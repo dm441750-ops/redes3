@@ -29,44 +29,34 @@ function guardarEvento(tipo, descripcion) {
  * LOGIN
  ***********************/
 document.getElementById("loginBtn").addEventListener("click", () => {
-    const user = document.getElementById("user").value;
-    const pass = document.getElementById("pass").value;
-    const error = document.getElementById("loginError");
+    let user = document.getElementById("user").value;
+    let pass = document.getElementById("pass").value;
+    let error = document.getElementById("loginError");
 
-    const usuariosValidos = [
-        "admin",
-        "Adolfo Melendez",
-        "Diego Garcia",
-        "Diego Ramirez",
-        "Alexis Buen dia",
-        "Itzel De la Cruz",
-        "Daniela Cruz"
-    ];
+    switch (user) {
+        case "admin":
+        case "Adolfo Melendez":
+        case "Diego Garcia":
+        case "Diego Ramirez":
+        case "Alexis Buen dia":
+        case "Itzel De la Cruz":
+        case "Daniela Cruz":
+            if (pass === "1234") {
+                usuarioActual = user;
+                guardarEvento("login", "Inicio de sesión");
 
-    if (usuariosValidos.includes(user) && pass === "1234") {
-        usuarioActual = user;
+                document.getElementById("login-section").classList.add("hidden");
+                document.getElementById("system").classList.remove("hidden");
+            } else {
+                error.textContent = "Usuario o contraseña incorrectos";
+            }
+            break;
 
-        // Mostrar secciones
-        document.getElementById("welcome").classList.remove("hidden");
-        document.getElementById("buttons").classList.remove("hidden");
-        document.getElementById("stats").classList.remove("hidden");
-
-        // Texto bienvenida
-        document.getElementById("welcomeText").textContent =
-            `Bienvenido, ${user}`;
-
-        try {
-            guardarEvento("login", "Inicio de sesión");
-        } catch (e) {
-            console.warn("Firebase no disponible");
-        }
-
-        error.textContent = "";
-    } else {
-        error.textContent = "Usuario o contraseña incorrectos";
+        default:
+            error.textContent = "Usuario o contraseña incorrectos";
+            break;
     }
 });
-
 
 /***********************
  * CAMBIO DE PESTAÑAS
@@ -152,3 +142,4 @@ db.collection("eventos")
           logList.appendChild(li);
       });
   });
+
