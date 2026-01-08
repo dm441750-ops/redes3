@@ -37,7 +37,7 @@ const db = getFirestore(app); */
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  const db = getAnalytics(app);
 </script>
 
 /***********************
@@ -79,6 +79,9 @@ document.getElementById("loginBtn").addEventListener("click", () => {
 
     if (usuarios.includes(user) && pass === "1234") {
         usuarioActual = user;
+
+      guardarEvento("login", "Inicio de sesión");
+      
         document.getElementById("login-section").classList.add("hidden");
         document.getElementById("system").classList.remove("hidden");
     } else {
@@ -96,6 +99,9 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
 
         btn.classList.add("active");
         document.getElementById(btn.dataset.tab).classList.add("active");
+      
+      guardarEvento("tab", btn.dataset.tab);
+
     });
 });
 
@@ -130,6 +136,8 @@ document.querySelectorAll(".action-btn").forEach(btn => {
         li.textContent = `${usuarioActual} hizo clic en ${nombre}`;
         logList.prepend(li);
 
+        guardarEvento("click", name);
+      
         updateChart();
     });
 });
@@ -154,4 +162,25 @@ function updateChart() {
     chart.data.datasets[0].data = Object.values(counters);
     chart.update();
 }
+
+/***********************
+ * MOSTRAR REGISTROS EN PANTALLA
+ ***********************/
+const logList = document.getElementById("logList");
+
+// Obtenemos la colección y la ordenamos por fecha descendente
+import { query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+
+const q = query(collection(db, "eventos"), orderBy("fecha", "desc"));
+
+// Escuchamos cambios en tiempo real
+onSnapshot(q, (snapshot) => {
+    logList.innerHTML = ""; // Limpiamos la lista
+    snapshot.forEach(doc => {
+        const e = doc.data();
+        const li = document.createElement("li");
+        li.textContent = `${e.usuario} → ${e.tipo}: ${e.detalle}`;
+        logList.appendChild(li);
+    });
+});
 
