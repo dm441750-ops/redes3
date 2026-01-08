@@ -43,11 +43,18 @@ document.getElementById("loginBtn").addEventListener("click", () => {
         case "Daniela Cruz":
             if (pass === "1234") {
                 usuarioActual = user;
-                guardarEvento("login", "Inicio de sesión");
-
+    
                 document.getElementById("login-section").classList.add("hidden");
                 document.getElementById("system").classList.remove("hidden");
-            } else {
+              
+              // Guardar evento SIN BLOQUEAR
+                try {
+                 guardarEvento("login", "Inicio de sesión");
+                      } catch (e) {
+                 console.warn("Firebase no disponible, evento no guardado");
+                     }
+                 }
+            else {
                 error.textContent = "Usuario o contraseña incorrectos";
             }
             break;
