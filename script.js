@@ -1,6 +1,7 @@
 /***********************
  * LOGIN
  ***********************/
+console.log("script.js cargado correctamente");
 let usuarioActual = "";
 
 document.getElementById("loginBtn").addEventListener("click", () => {
