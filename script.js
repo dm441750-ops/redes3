@@ -1,7 +1,7 @@
 /***********************
  * LOGIN
  ***********************/
-console.log("script.js cargado correctamente");
+/*console.log("script.js cargado correctamente");
 let usuarioActual = "";
 
 document.getElementById("loginBtn").addEventListener("click", () => {
@@ -30,7 +30,7 @@ document.getElementById("loginBtn").addEventListener("click", () => {
 /***********************
  * PESTAÑAS
  ***********************/
-document.querySelectorAll(".tab-btn").forEach(btn => {
+/*document.querySelectorAll(".tab-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
         document.querySelectorAll(".tab-content").forEach(t => t.classList.remove("active"));
@@ -43,7 +43,7 @@ document.querySelectorAll(".tab-btn").forEach(btn => {
 /***********************
  * CONTADORES
  ***********************/
-let totalClicks = 0;
+/*let totalClicks = 0;
 
 let counters = {
     "Botón Azul": 0,
@@ -58,7 +58,7 @@ const logList = document.getElementById("logList");
 /***********************
  * BOTONES
  ***********************/
-document.querySelectorAll(".action-btn").forEach(btn => {
+/*document.querySelectorAll(".action-btn").forEach(btn => {
     btn.addEventListener("click", () => {
         const nombre = btn.dataset.btn;
 
@@ -78,7 +78,7 @@ document.querySelectorAll(".action-btn").forEach(btn => {
 /***********************
  * GRÁFICA
  ***********************/
-const ctx = document.getElementById("clickChart");
+/*const ctx = document.getElementById("clickChart");
 
 const chart = new Chart(ctx, {
     type: "bar",
@@ -95,3 +95,80 @@ function updateChart() {
     chart.data.datasets[0].data = Object.values(counters);
     chart.update();
 }
+
+
+
+/***********************
+ * IMPORTS FIREBASE
+ ***********************/
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp, onSnapshot, query, orderBy } 
+from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
+
+/***********************
+ * CONFIG FIREBASE
+ ***********************/
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_PROYECTO.firebaseapp.com",
+  projectId: "TU_PROYECTO",
+};
+
+/***********************
+ * INIT
+ ***********************/
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+let usuarioActual = "";
+
+//funcion para guardar eventos
+function guardarEvento(tipo, detalle) {
+  addDoc(collection(db, "eventos"), {
+    usuario: usuarioActual,
+    tipo: tipo,
+    detalle: detalle,
+    fecha: serverTimestamp()
+  });
+}
+//login
+usuarioActual = user;
+guardarEvento("login", "Inicio de sesión");
+
+//cambio de pestaña
+guardarEvento("tab", btn.dataset.tab);
+
+//click boton
+guardarEvento("click", name);
+
+//mostrar datos de la BD
+const logList = document.getElementById("logList");
+
+const q = query(collection(db, "eventos"), orderBy("fecha", "desc"));
+
+onSnapshot(q, (snapshot) => {
+  logList.innerHTML = "";
+  snapshot.forEach(doc => {
+    const e = doc.data();
+    const li = document.createElement("li");
+    li.textContent = `${e.usuario} → ${e.tipo}: ${e.detalle}`;
+    logList.appendChild(li);
+  });
+});
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /eventos/{document} {
+      allow read, write: if true;
+    }
+  }
+}
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /eventos/{document} {
+      allow read, write: if true;
+    }
+  }
+}
+
