@@ -10,20 +10,13 @@
   <body> 
     <!-- LOGIN --> <section id="login-section" class="active"> <div class="login-box"> <h2>Iniciar Sesión</h2> <input type="text" id="user" placeholder="Usuario"> <input type="password" id="pass" placeholder="Contraseña"> <button id="loginBtn">Entrar</button> <p id="loginError"></p> </div> </section> <!-- SISTEMA PRINCIPAL --> <section id="system" class="hidden"> <nav class="tabs"> <button class="tab-btn active" data-tab="inicio">Inicio</button> <button class="tab-btn" data-tab="acciones">Acciones</button> <button class="tab-btn" data-tab="estadisticas">Estadísticas</button> </nav> <!-- INICIO --> <section id="inicio" class="tab-content active"> <h1>Sistema de Interacción</h1> <p>Presiona los botones en la pestaña de Acciones para registrar actividad.</p> <h2>Creadores del Sitio</h2> <div class="creators-container"> <div class="creator-card"> <img src="diego ramirez.jpeg" alt="Creador 1"> <p class="creator-name">Ramirez Martinez Diego</p> </div> <div class="creator-card"> <img src="diego garcia 2.jpeg" alt="Creador 2"> <p class="creator-name">Garcia Manzano Diego</p> </div> <div class="creator-card"> <img src="WhatsApp Image 2025-12-11 at 09.30.05.jpeg" alt="Creador 1"> <p class="creator-name">Caballero de la Cruz Blanca Itzel</p> </div> <div class="creator-card"> <img src="WhatsApp Image 2025-12-11 at 09.30.15.jpeg" alt="Creador 2"> <p class="creator-name">Cruz Vega Daniela Giselle</p> </div> <div class="creator-card"> <img src="WhatsApp Image 2025-12-11 at 09.30.22.jpeg" alt="Creador 1"> <p class="creator-name">Buendia Cruz Alexis Omar</p> </div> </div> </section> <!-- ACCIONES --> <section id="acciones" class="tab-content"> <h2>Botones de Interacción</h2> <div class="button-grid"> <button class="action-btn btn-1" data-btn="Botón Azul">Botón Azul</button> <button class="action-btn btn-2" data-btn="Botón Verde">Botón Verde</button> <button class="action-btn btn-3" data-btn="Botón Naranja">Botón Naranja</button> <button class="action-btn btn-4" data-btn="Botón Rosa">Botón Rosa</button> <button class="action-btn btn-5" data-btn="Botón Morado">Botón Morado</button> </div> </section> <!-- ESTADÍSTICAS --> <section id="estadisticas" class="tab-content"> <h2>Estadísticas de Interacciones</h2> <p>Total de clics: <span id="totalClicks">0</span></p> <h3>Gráfica de clics por botón</h3> <canvas id="clickChart" width="400" height="200"></canvas> <h3>Registro detallado</h3> <ul id="logList"></ul> </section> </section> 
     
-   <script type="module">
+   <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";></script>
+  <script src="https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";></scrpt>
   // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-   
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+  //char
      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
-    
+    //tu script
     <script src="script.js"></script> 
   </body> 
 </html>
