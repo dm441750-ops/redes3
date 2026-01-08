@@ -21,7 +21,6 @@ from "https://www.gstatic.com/firebasejs/12.7.0/firebase-firestore.js";
 /*const app = initializeApp(firebaseConfig);
 const db = getFirestore(app); */
 
-<script type="module">
    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
 
@@ -38,7 +37,6 @@ const db = getFirestore(app); */
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const db = getAnalytics(app);
-</script>
 
 /***********************
  * USUARIO ACTUAL
