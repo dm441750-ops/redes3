@@ -1,14 +1,15 @@
 /***********************
- * FIREBASE CONFIG
+ * FIREBASE CONFIG (COMPAT)
  ***********************/
 let usuarioActual = "";
 
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "TU_PROYECTO.firebaseapp.com",
-  projectId: "TU_PROYECTO",
+  apiKey: "AIzaSyAnB_sfpz4JbO-BFrblqpAVMpY4BSAnFA0",
+  authDomain: "web-app-df58b.firebaseapp.com",
+  projectId: "web-app-df58b"
 };
 
+// Inicializar Firebase (FORMA CORRECTA)
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
@@ -128,7 +129,7 @@ function updateChart() {
 }
 
 /***********************
- * MOSTRAR REGISTROS BD
+ * MOSTRAR REGISTROS DESDE FIRESTORE
  ***********************/
 db.collection("eventos")
   .orderBy("fecha", "desc")
@@ -141,6 +142,3 @@ db.collection("eventos")
           logList.appendChild(li);
       });
   });
-
-
-
