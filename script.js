@@ -1,20 +1,34 @@
-   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-   import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-analytics.js";
+  import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyAnB_sfpz4JbO-BFrblqpAVMpY4BSAnFA0",
-    authDomain: "web-app-df58b.firebaseapp.com",
-    projectId: "web-app-df58b",
-    storageBucket: "web-app-df58b.firebasestorage.app",
-    messagingSenderId: "1035576649254",
-    appId: "1:1035576649254:web:568f7970c53a409f7ea8e7",
-    measurementId: "G-D3JMYZ1EJN"
-  };
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDj3rm2mZVyrX1dAT9SugnZvWC7f1H5XfM",
+  authDomain: "lkjhgvcbe.firebaseapp.com",
+  projectId: "lkjhgvcbe",
+  storageBucket: "lkjhgvcbe.firebasestorage.app",
+  messagingSenderId: "452710671400",
+  appId: "1:452710671400:web:69fc81761650a1cf62c11d",
+  measurementId: "G-WQ7RR06150"
+};
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const db = getAnalytics(app);
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDj3rm2mZVyrX1dAT9SugnZvWC7f1H5XfM",
+  authDomain: "lkjhgvcbe.firebaseapp.com",
+  projectId: "lkjhgvcbe",
+  storageBucket: "lkjhgvcbe.firebasestorage.app",
+  messagingSenderId: "452710671400",
+  appId: "1:452710671400:web:69fc81761650a1cf62c11d",
+  measurementId: "G-WQ7RR06150"
+};
 /***********************
  * USUARIO ACTUAL
  ***********************/
