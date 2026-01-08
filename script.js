@@ -1,5 +1,15 @@
 // LOGIN SIMPLE
 document.getElementById("loginBtn").addEventListener("click", () => {
+    let usuarioActual = "";
+
+const firebaseConfig = {
+  apiKey: "TU_API_KEY",
+  authDomain: "TU_PROYECTO.firebaseapp.com",
+  projectId: "TU_PROYECTO",
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
     let user = document.getElementById("user").value;
     let pass = document.getElementById("pass").value;
     let error = document.getElementById("loginError");
